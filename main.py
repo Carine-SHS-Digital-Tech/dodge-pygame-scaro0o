@@ -91,7 +91,7 @@ while done == False:
         nextObject = FallingObject()
         nextObject.setImage("Apple.png")
         allFallingObjects.add(nextObject)
-        nextApple = pygame.time.get_ticks() + 1500
+        nextApple = pygame.time.get_ticks() + 100
 
     for eachObject in (allFallingObjects.sprites()):
         eachObject.moveFallingObjects(5)
@@ -100,6 +100,11 @@ while done == False:
 
 
     character.moveCharacter(movement)
+
+
+    collisions = pygame.sprite.groupcollide(allFallingObjects,charactersGroup,False,False)
+    if len(collisions)>0:
+        done = True
 
     screen.blit(background_image, [0,0])
     allFallingObjects.draw(screen)
