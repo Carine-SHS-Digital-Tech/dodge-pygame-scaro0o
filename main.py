@@ -26,7 +26,7 @@ class FallingObject(pygame.sprite.Sprite):
     def deleteFallingObjects(self,oldscore):
         if self.rect.y > 470:
             self.kill()
-            newscore = oldscore + 1
+            newscore = oldscore + 111111111111111111111111111111111111111111111111111111
             return newscore
         else:
             return oldscore
